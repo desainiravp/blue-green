@@ -1,0 +1,32 @@
+version: '3'
+services:
+  blue:
+    build: ./blue
+    container_name: blue_app
+    ports:
+      - "8081:80"
+    networks:
+      - app_network
+
+  green:
+    build: ./green
+    container_name: green_app
+    ports:
+      - "8082:80"
+    networks:
+      - app_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_proxy
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - "80:80"
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
