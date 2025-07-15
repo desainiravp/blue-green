@@ -22,7 +22,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
     ports:
-      - "8080:80"  # Changed from 80 to 8080
+      - "8888:80"  # Changed from 80 to 8080
     networks:
       - app_network
 
