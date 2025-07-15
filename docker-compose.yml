@@ -4,7 +4,7 @@ services:
     build: ./blue
     container_name: blue_app
     ports:
-      - "8081:80"
+      - "8181:80"  # Changed from 8081 to 8181
     networks:
       - app_network
 
@@ -12,7 +12,7 @@ services:
     build: ./green
     container_name: green_app
     ports:
-      - "8082:80"
+      - "8282:80"  # Changed from 8082 to 8282
     networks:
       - app_network
 
@@ -22,7 +22,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
     ports:
-      - "80:80"
+      - "8080:80"  # Changed from 80 to 8080
     networks:
       - app_network
 
